@@ -29,5 +29,8 @@ namespace Polly.Models
         {
             return new ApplicationDbContext();
         }
+
+        public virtual DbSet<Poll> Polls { get; set; }
+        public virtual DbSet<Answer> Answers { get; set; }
     }
 }
