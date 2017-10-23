@@ -58,11 +58,9 @@ namespace Polly
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(
+                   clientId: "577531566774-6fk90kgh9f96s7pdk7734h1plf1g5230.apps.googleusercontent.com",
+                   clientSecret: "PjImIwJXp7XQxmaffmQD-JRg");
         }
     }
 }

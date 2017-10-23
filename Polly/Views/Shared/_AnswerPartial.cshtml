@@ -1,0 +1,37 @@
+﻿@model List<Polly.Models.Answer>
+
+    @if (ViewBag.HaveVoted == true)
+    {
+        <h5>You have already voted on this poll!!</h5>
+    }
+    <table class="table table-striped">
+        <tr><th>Option</th><th>Votes</th>
+        @if (ViewBag.HaveVoted == null)
+        {
+            <th>Vote</th>
+        }
+        </tr>
+        @foreach (var answer in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(model => answer.Option) </td>
+                <td>@Html.DisplayFor(model => answer.Votes)</td>
+                @if (ViewBag.HaveVoted == null)
+                {
+                    <td> <button class="vote" data-poll="@answer.PollId" data-id="@answer.Id">Vote!</button></td>
+                }
+                
+
+            </tr>
+        }
+    </table>
+
+@if (ViewBag.HaveVoted == null)
+{
+    <p>Or add a new Answer!</p>
+    <form class="form-group">
+        <input type="text" class="new-answer"/>
+        <input type="submit" value="submit" class="submit-new"/>
+    </form>
+    
+}

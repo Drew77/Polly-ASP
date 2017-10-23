@@ -22,3 +22,22 @@ select,
 textarea {
     max-width: 280px;
 }
+
+#chart_div > div > div:nth-child(1) {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.answer {
+    margin-bottom: 10px;
+}
+
+.add-input:hover,
+.remove-input:hover {
+    background: #f4efef;
+}
+
+#Google {
+    background: #db3236;
+    color: white;
+}

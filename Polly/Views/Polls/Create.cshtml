@@ -1,10 +1,12 @@
-﻿@model Polly.Models.Poll
+﻿@model Polly.Models.CreateVM
 
 @{
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>Create A Poll</h2>
+
+
 
 
 @using (Html.BeginForm()) 
@@ -12,7 +14,6 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Poll</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -30,6 +31,24 @@
                 @Html.ValidationMessageFor(model => model.Question, "", new { @class = "text-danger" })
             </div>
         </div>
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Answers, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Answers, new { htmlAttributes = new { @class = "form-control hidden answer" } })
+                @Html.ValidationMessageFor(model => model.Question, "", new { @class = "text-danger" })
+                <div>
+                    <button class="btn add-input">Add New Answer</button>
+                    <button class="btn remove-input">Remove latest Answer</button>
+                </div>
+
+            </div>
+        </div>
+
+
+       
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
